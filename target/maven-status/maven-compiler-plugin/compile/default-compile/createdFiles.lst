@@ -1,0 +1,13 @@
+com\project1\RedirectLong.class
+com\project1\LoginServlet.class
+com\project2\database\interfaces\UserDaoInterface.class
+com\project2\database\interfaces\LinksDaoInterface.class
+com\project1\SessionListener.class
+com\project1\SessionRegistry.class
+com\project2\database\classes\UserDbAccess.class
+com\project2\database\classes\UserRowMapper.class
+com\project2\database\classes\LinksDbAccess.class
+com\project1\ShortnerServlet.class
+com\project2\dao\Links.class
+com\project2\dao\User.class
+com\project1\UserUrl.class
