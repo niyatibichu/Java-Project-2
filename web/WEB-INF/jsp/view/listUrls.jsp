@@ -1,9 +1,11 @@
 <%@ page import="java.util.Map,com.project1.UserUrl" %>
+<%@ page import="java.util.Map,com.project2.dao.Links" %>
+<%@page import="java.util.List" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
-   
-    Map<String, UserUrl> shortnerDatabase =(Map<String, UserUrl>)request.getAttribute("shortnerDatabase");
-String username=(String)request.getSession().getAttribute("username");
+   List<Links> listoflinks=(List<Links>)request.getAttribute("listoflinks");
+   // Map<String, UserUrl> shortnerDatabase =(Map<String, UserUrl>)request.getAttribute("shortnerDatabase");
+// username=(String)request.getSession().getAttribute("username");
 %>
 <!DOCTYPE html>
 <html>
@@ -16,9 +18,18 @@ String username=(String)request.getSession().getAttribute("username");
         <a href="<c:url value="/shortner">
             <c:param name="action" value="create" />
         </c:url>">Create Short Url</a><br /><br />
+        <c:forEach items="${listoflinks}" var="element"> 
+       
+  <tr>
+    <td>Short URL: ${element.shortUrl}</td>
+    <td>Long URL: ${element.longUrl}</td>
+    <td>Clicks: ${element.clicks}</td>
+    
+     </tr>
+   
+</c:forEach>
         
-        
-        <c:forEach var="db" items="${shortnerDatabase}">
+      <%--   <c:forEach var="db" items="${shortnerDatabase}">
         	<c:set var="key" value="${db.key}" />
         	<c:set var="userurl" value ="${db.value }" />
         	<c:set var="long" value ="longUrl" />
@@ -29,10 +40,10 @@ String username=(String)request.getSession().getAttribute("username");
 	        	<br></br>
 	        	<b>Long url :</b>${userurl.longUrl} 
 	        	<br></br>
-	        	<b>Clicks :</b>${userurl.clicks}
+	        	<b>Clicks :</b>${userurl.clicks} --%>
 	        	<br></br>
 	        	
-			</c:if>	
-       	</c:forEach>
+			<%-- </c:if>	
+       	</c:forEach> --%>
 </body>
 </html>
